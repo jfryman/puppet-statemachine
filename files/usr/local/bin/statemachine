@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+#/ Usage: statemachine <command> [<args>...]
+#/ A wrapper for statemachine subcommands
+#/
+#/ command types types:
+#/   statemachine list
+#/   statemachine show <state>
+#/   statemachine set <state> <value>
+#/   statemachine generate
+
+set -e
+test $# -eq 0 && set -- --help
+
+# shift off process type
+COMMAND="$1"
+shift
+
+exec /usr/local/bin/statemachine-$COMMAND "$@"

@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+for base in `ls <%= @settings['base_dir'] %>`; do
+  EXPLODED_BASE=`echo ${base} | sed 's/_/::/g'`
+  echo "${EXPLODED_BASE}"
+done

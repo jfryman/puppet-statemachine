@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+BASE=`echo ${1} | sed 's/::/_/g'`
+
+if [[ -f <%= @settings['base_dir'] %>/$BASE ]]; then
+	cat $STATE
+else
+	echo "That statemachine is not configured on this machine"
+fi
