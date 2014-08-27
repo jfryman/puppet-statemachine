@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
 for base in `ls <%= @settings['base_dir'] %>`; do
-  state = `cat ${base}`
+  state=`cat <%= @settings['base_dir'] %>/${base}`
   echo "statemachine_${base}=${state}"
 done
